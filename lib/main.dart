@@ -63,11 +63,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
 
-  void _incrementCounter() {
+  void _showSnackBar(int count) {
     setState(() {
-      _counter++;
+      print(count);
+      if (count % 3 == 0) {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            duration: const Duration(milliseconds: 500),
+            content: Text('Modulus hit: $count')));
+      }
     });
   }
 
@@ -100,13 +104,15 @@ class _MyHomePageState extends State<MyHomePage> {
             FloatingActionButton(
               onPressed: () {
                 counterBloc.add(CounterIncrementEvent());
+                _showSnackBar(counterBloc.state.currentValue);
               },
               tooltip: 'Increment',
               child: const Icon(Icons.add),
             ),
-                        FloatingActionButton(
+            FloatingActionButton(
               onPressed: () {
                 counterBloc.add(CounterDecrementEvent());
+                _showSnackBar(counterBloc.state.currentValue);
               },
               tooltip: 'Decrement',
               child: const Icon(Icons.remove),
