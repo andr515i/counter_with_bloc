@@ -53,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
     if (count % 3 == 0) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         duration: const Duration(milliseconds: 500),
+        key: const Key("din mor"),
         content: Text('Modulus hit: $count'),
       ));
     }
