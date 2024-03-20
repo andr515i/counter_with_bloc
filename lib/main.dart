@@ -122,14 +122,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                       randomBloc.add(RandomIncrementEvent());
                                     },
                                     tooltip: 'Random Increment',
-                                    child: const Icon(Icons.add),
+                                    child: const Icon(Icons.add_box),
                                   ),
                                   FloatingActionButton(
                                     onPressed: () {
                                       randomBloc.add(RandomDecrementEvent());
                                     },
                                     tooltip: 'Random Decrement',
-                                    child: const Icon(Icons.remove),
+                                    child: const Icon(Icons.remove_circle),
                                   ),
                                 ],
                               ),
