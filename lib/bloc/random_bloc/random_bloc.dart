@@ -10,4 +10,11 @@ class RandomNumberBloc extends Bloc<RandomNumberEvent, RandomNumberState> {
     on<RandomIncrementEvent>((event, emit) => emit(state.increment(state)));
     on<RandomDecrementEvent>((event, emit) => emit(state.decrement(state)));
   }
+
+
+
+
+
+
+  
 }
